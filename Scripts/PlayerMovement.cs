@@ -97,6 +97,7 @@ public class PlayerMovement : MonoBehaviour {
 
         float maxSpeed = this.maxSpeed;
         
+      // made by Dani
         if (crouching && grounded && readyToJump) {
             rb.AddForce(Vector3.down * Time.deltaTime * 3000);
             return;
