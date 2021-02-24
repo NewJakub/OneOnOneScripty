@@ -96,8 +96,7 @@ public class PlayerMovement : MonoBehaviour {
         if (readyToJump && jumping) Jump();
 
         float maxSpeed = this.maxSpeed;
-        
-      // made by Dani
+
         if (crouching && grounded && readyToJump) {
             rb.AddForce(Vector3.down * Time.deltaTime * 3000);
             return;
@@ -119,7 +118,7 @@ public class PlayerMovement : MonoBehaviour {
         // Movement while sliding
         if (grounded && crouching) multiplierV = 0f;
 
-        //Apply forces to move player
+  
         rb.AddForce(orientation.transform.forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
         rb.AddForce(orientation.transform.right * x * moveSpeed * Time.deltaTime * multiplier);
     }
@@ -210,7 +209,7 @@ public class PlayerMovement : MonoBehaviour {
 
         for (int i = 0; i < other.contactCount; i++) {
             Vector3 normal = other.contacts[i].normal;
-            //FLOOR
+
             if (IsFloor(normal)) {
                 grounded = true;
                 cancellingGrounded = false;
