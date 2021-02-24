@@ -36,10 +36,12 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 normalVector = Vector3.up;
     private Vector3 wallNormalVector;
 
+  
     void Awake() {
         rb = GetComponent<Rigidbody>();
     }
     
+  
     void Start() {
         playerScale =  transform.localScale;
         Cursor.lockState = CursorLockMode.Locked;
